@@ -1,0 +1,59 @@
+@import "../../../common//colors.scss";
+
+header {
+  background: linear-gradient(to top, black 0%, transparent 100%);
+  display: flex;
+  position: sticky;
+  box-sizing: border-box;
+  padding: 15px;
+  width: 100vw;
+  z-index: 5;
+}
+
+.logo {
+  width: 80px;
+  transition: transform 0.2s;
+  text-align: center;
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        font-weight: 400;
+        padding: 7px 15px;
+        font-size: 15px;
+        color: white;
+        margin-right: 10px;
+        transition: background 0.2s ease;
+        border-radius: 10px;
+
+        &:hover {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.active {
+  background: $primary-color;
+}

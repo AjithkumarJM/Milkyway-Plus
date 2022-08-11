@@ -1,0 +1,27 @@
+@import "https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: #221f1f;
+  color: white;
+}
+
+ol,
+li {
+  list-style: none;
+}
+
+.container {
+  padding: 20px;
+  margin-top: 20px;
+}
