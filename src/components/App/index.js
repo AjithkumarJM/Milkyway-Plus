@@ -8,7 +8,6 @@ import {
 
 import Header from "../UI/Header";
 import Home from "../Home";
-// import MovieDetail from "../Movies/MovieDetail";
 
 const WatchList = lazy(() => import("../Movies/WatchList"));
 const MovieDetail = lazy(() => import("../Movies/MovieDetail"));
@@ -25,7 +24,7 @@ const App = () => {
           <Route
             path="watchlist"
             element={
-              <Suspense fallback={<div>fallback component for watchlist</div>}>
+              <Suspense fallback={<h2>loading watchlist ...</h2>}>
                 <WatchList />
               </Suspense>
             }
@@ -34,7 +33,7 @@ const App = () => {
             path="movie/:movieId"
             element={
               <Suspense
-                fallback={<div>fallback component for Movie Detail</div>}
+                fallback={<h2>loading movie detail ...</h2>}
               >
                 <MovieDetail />
               </Suspense>

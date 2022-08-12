@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { lazy, useEffect, Suspense } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
@@ -15,18 +15,18 @@ const Home = () => {
   const { comedyRoute, actionRoute, horrorRoute } = requests;
   const posters = [
     {
-      title: "Action & Adventure Programmes of 2022",
+      title: "Action & Adventures: 2022",
       data: adventure,
       isLargePoster: true,
     },
     {
-      title: "Exciting Action Comedies of 2021",
-      data: comedy,
+      title: "Supernatural TV Sci-fi & Fantasy: 2021",
+      data: horror,
       isLargePoster: true,
     },
     {
-      title: "Supernatural TV Sci-fi & Fantasy 2020",
-      data: horror,
+      title: "Exciting Action Comedies: 2020",
+      data: comedy,
       isLargePoster: true,
     },
   ];
@@ -34,18 +34,21 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchAdventureMovies(actionRoute));
-    dispatch(fetchComedyMovies(comedyRoute));
     dispatch(fetchHorrorMovies(horrorRoute));
+    dispatch(fetchComedyMovies(comedyRoute));
   }, []);
 
-  return (
-    <div>
-      {posters &&
-        posters.map((poster, index) => {
-          return <Posters key={`${poster.title}-${index}`} {...poster} />;
-        })}
-    </div>
-  );
+  const renderPosters = (poster, idx) => {
+    let content = "";
+
+    // with post.status can develop a separate components for loader/error state
+
+    content = <Posters {...poster} />;
+
+    return <div key={`${poster.title}-${idx}`}>{content} </div>;
+  };
+
+  return <div>{posters.map(renderPosters)}</div>;
 };
 
 export default Home;

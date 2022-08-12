@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import { BASE_IMG_URL } from "../../../common/apis/common";
 import { getMovies } from "../../../features/movies/moviesSlice";
-import Image from "../../UI/Image";
+import ProgressiveImage from "../../UI/ProgressiveImage";
 
 import "./style.scss";
 
@@ -13,7 +13,7 @@ const Cast = () => {
   const renderCast = (cast) => {
     return (
       <div className="cast-poster" key={cast.id}>
-        <Image src={BASE_IMG_URL + cast.profile_path} alt={cast.name} />
+        <ProgressiveImage src={BASE_IMG_URL + cast.profile_path} alt={cast.name} />
         <h4>{cast.character}</h4>
         <p>{cast.name}</p>
       </div>

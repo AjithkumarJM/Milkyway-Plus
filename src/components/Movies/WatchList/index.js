@@ -4,7 +4,7 @@ import {
   getMovies,
   removeFromWatchlist,
 } from "../../../features/movies/moviesSlice";
-import Image from "../../UI/Image";
+import ProgressiveImage from "../../UI/ProgressiveImage";
 
 import "./style.scss";
 
@@ -17,7 +17,12 @@ const WatchList = () => {
       <div className="watchlist-container">
         {watchlist.map((movie) => (
           <div key={movie.id} className="watchlist-posters">
-            <Image src={BASE_IMG_URL + movie.backdrop_path} alt={movie.title} />
+            <ProgressiveImage
+              src={BASE_IMG_URL + movie.backdrop_path}
+              alt={movie.title}
+              height="188"
+              width="334"
+            />
 
             <div className="watchlist-info">
               <div className="watchlist-title">{movie.title}</div>

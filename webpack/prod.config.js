@@ -19,10 +19,13 @@ module.exports = merge(common, {
     ],
   },
   optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
     minimizer: [
       new HtmlWebpackPlugin({
         template: path.join(__dirname, "../public", "index.html"),
-        favicon: path.join(__dirname, '../src/assets/images', 'logo.png'),
+        favicon: path.join(__dirname, "../src/assets/images", "logo.png"),
         minify: {
           removeAttributeQuotes: true,
           collapseWhitespace: true,

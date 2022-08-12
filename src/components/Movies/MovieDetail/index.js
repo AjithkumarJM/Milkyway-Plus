@@ -15,7 +15,7 @@ import { BASE_IMG_URL } from "../../../common/apis/common";
 import { numFormatter } from "../../../common/helpers";
 import Chip from "../../UI/Chip";
 import Cast from "../MovieCasts";
-import Image from "../../UI/Image";
+import ProgressiveImage from "../../UI/ProgressiveImage";
 import MovieDetailSubSection from "../MovieDetailSubSection";
 
 import "./style.scss";
@@ -87,7 +87,9 @@ const MovieDetail = () => {
       <>
         <div className="movie-detail-container">
           <div className="movie-banner">
-            <Image
+            <ProgressiveImage
+              height="641"
+              width="1139"
               src={BASE_IMG_URL + data.backdrop_path}
               alt={data.original_title}
             />
@@ -111,7 +113,7 @@ const MovieDetail = () => {
                 ))}
             </MovieDetailSubSection>
 
-            <MovieDetailSubSection name="user Score:">
+            <MovieDetailSubSection name="User Score:">
               <div className="rating-chip">{renderRatingChip()}</div>
             </MovieDetailSubSection>
 
@@ -149,7 +151,7 @@ const MovieDetail = () => {
         </div>
 
         <div className="movie-detail-footer">
-          <h2>Cast</h2>
+          <h2>cast</h2>
           <Cast />
         </div>
       </>

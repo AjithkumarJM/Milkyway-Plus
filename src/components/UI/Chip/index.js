@@ -1,6 +1,7 @@
 import "./style.scss";
 
-const Chip = ({ type, name }) => {
+const Chip = (props) => {
+  const { type, name } = props;
   let chipColor = "primary";
 
   switch (type) {
@@ -29,7 +30,11 @@ const Chip = ({ type, name }) => {
       break;
   }
 
-  return <div className={`chip ${chipColor}`}>{name}</div>;
+  return (
+    <div className={`chip ${chipColor}`} {...props}>
+      {name}
+    </div>
+  );
 };
 
 export default Chip;
