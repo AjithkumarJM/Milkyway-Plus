@@ -12,7 +12,7 @@ import {
   removeFromWatchlist,
 } from "../../../features/movies/moviesSlice";
 import { BASE_IMG_URL } from "../../../common/apis/common";
-import { numFormatter } from "../../../common/helpers";
+import { numbersIntoKMB } from "../../../common/helpers";
 import Chip from "../../UI/Chip";
 import Cast from "../MovieCasts";
 import ProgressiveImage from "../../UI/ProgressiveImage";
@@ -127,13 +127,13 @@ const MovieDetail = () => {
 
             {data.budget > 0 && (
               <MovieDetailSubSection name="Budget:">
-                <div className="revenue">{numFormatter(data.budget)}</div>
+                <div className="revenue">{numbersIntoKMB(data.budget)}</div>
               </MovieDetailSubSection>
             )}
 
             {data.revenue > 0 && (
               <MovieDetailSubSection name="Revenue:">
-                <div className="revenue">{numFormatter(data.revenue)}</div>
+                <div className="revenue">{numbersIntoKMB(data.revenue)}</div>
               </MovieDetailSubSection>
             )}
 
