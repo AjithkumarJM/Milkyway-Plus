@@ -19,9 +19,9 @@ module.exports = merge(common, {
     ],
   },
   optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
+    // splitChunks: {
+    //   chunks: "all",
+    // },
     minimizer: [
       new HtmlWebpackPlugin({
         template: path.join(__dirname, "../public", "index.html"),
