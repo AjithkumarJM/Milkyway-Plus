@@ -18,7 +18,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <div className="container">
+      <div className="container" data-testid="container-element">
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route
@@ -32,9 +32,7 @@ const App = () => {
           <Route
             path="movie/:movieId"
             element={
-              <Suspense
-                fallback={<h2>loading movie detail ...</h2>}
-              >
+              <Suspense fallback={<h2>loading movie detail ...</h2>}>
                 <MovieDetail />
               </Suspense>
             }

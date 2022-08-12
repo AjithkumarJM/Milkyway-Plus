@@ -31,7 +31,7 @@ const Chip = (props) => {
   }
 
   return (
-    <div className={`chip ${chipColor}`} {...props}>
+    <div data-testid="ui-chip" className={`chip ${chipColor}`} {...props}>
       {name}
     </div>
   );

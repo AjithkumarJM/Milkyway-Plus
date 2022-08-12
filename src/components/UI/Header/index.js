@@ -6,11 +6,11 @@ import "./style.scss";
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="header" data-testid="header-container">
       <div className="logo">
         <img src={Logo} alt="cine-movie-logo" />
       </div>
-      
+
       <nav>
         <ul>
           <li>
